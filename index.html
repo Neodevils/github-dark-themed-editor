@@ -8,15 +8,65 @@
   <title>GitHub Editor</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background-color: #000001;
+      margin: 2px;
+      font-family: Arial;
+      background-color: black;
+    }
+
+    h3 {
+      color: white;
+    }
+
+    .tab {
+      overflow: hidden;
+      border: 1px solid gray;
+      background-color: black;
+      color: white;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      color: white;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #000;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #000;
+      font-weight: 700;
+      border-bottom: 2.7px solid darkorange
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
     }
 
     textarea[is="highlighted-code"] {
-      margin: 10px;
       padding: 18px;
-      width: 96%;
+      width: 90%;
+      font-size: 1.5rem;
+    }
+
+    footer {
+      margin: 2px auto;
+      text-align: center;
+      color: darkgray;
     }
   </style>
   <script>
@@ -27,12 +77,58 @@
 
       HighlightedCode.useTheme('github-dark');
     })(self);
+
+    function openEditor(evt, editorName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(editorName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
   </script>
 </head>
 
 <body>
-  <textarea is="highlighted-code" cols="10" rows="15" language="javascript" tab-size="2" auto-height>
-</textarea>
+  <div class="tab">
+    <button class="tablinks" onclick="openEditor(event, 'HTML')">HTML</button>
+    <button class="tablinks" onclick="openEditor(event, 'CSS')">CSS</button>
+    <button class="tablinks" onclick="openEditor(event, 'JS')">JavaScript</button>
+    <button class="tablinks" onclick="openEditor(event, 'PY')">Python</button>
+  </div>
+
+  <div id="HTML" class="tabcontent">
+    <h3>HTML</h3>
+    <textarea is="highlighted-code" cols="10" rows="15" language="html" tab-size="2" auto-height>
+  </textarea>
+  </div>
+
+  <div id="CSS" class="tabcontent">
+    <h3>CSS</h3>
+    <textarea is="highlighted-code" cols="10" rows="15" language="css" tab-size="2" auto-height>
+  </textarea>
+  </div>
+
+  <div id="JS" class="tabcontent">
+    <h3>JavaScript</h3>
+    <textarea is="highlighted-code" cols="10" rows="15" language="javascript" tab-size="2" auto-height>
+  </textarea>
+  </div>
+  
+    <div id="PY" class="tabcontent">
+    <h3>Python</h3>
+    <textarea is="highlighted-code" cols="10" rows="15" language="python" tab-size="2" auto-height>
+  </textarea>
+  </div>
+  
+  <footer>
+    Made with ❤️ by Neodevils.
+  </footer>
 </body>
 
 </html>
