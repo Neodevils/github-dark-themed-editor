@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>GitHub Editor</title>
   <style>
     textarea[is="highlighted-code"] {
       padding: 18px;
       width: 1200px;
     }
   </style>
-  <script type="module">
+  <script>
     (async ({ chrome, netscape }) => {
 
       const { default: HighlightedCode } =
-      await import('https://unpkg.com/highlighted-code@0.3.7/min.js');
+      await import("https://unpkg.com/highlighted-code@0.3.7/min.js");
 
       HighlightedCode.useTheme('github-dark');
     })(self);
