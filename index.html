@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>GitHub Editor</title>
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
     textarea[is="highlighted-code"] {
       padding: 18px;
-      width: 1200px;
+      position: fixed;
+      width: 98%;
+      height: 100%;
     }
   </style>
   <script>
@@ -26,4 +34,5 @@
   <textarea is="highlighted-code" cols="80" rows="12" language="javascript" tab-size="2" auto-height>
 </textarea>
 </body>
+
 </html>
