@@ -15,7 +15,7 @@
     (async ({ chrome, netscape }) => {
 
       const { default: HighlightedCode } =
-      await import('min.js');
+      await import('https://unpkg.com/highlighted-code@0.3.7/min.js');
 
       HighlightedCode.useTheme('github-dark');
     })(self);
