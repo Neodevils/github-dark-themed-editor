@@ -37,7 +37,7 @@ h3 {
 .tab button.active {
   background-color: #000;
   font-weight: 700;
-  border-bottom: 2.7px solid #ffa193
+  border-bottom: 2.7px solid rgb(247, 129, 102);
 }
 
 /* Style the tab content */
