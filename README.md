@@ -1,3 +1,5 @@
+[![Page is currently:](https://github.com/Neodevils/github-dark-themed-editor/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/Neodevils/github-dark-themed-editor/actions/workflows/pages.yml)
+
 # GitHub Dark Themed Code Editor 🙌🏻
 
 You can also code on your browser while offline on the website 😎
